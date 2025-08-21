@@ -1,0 +1,167 @@
+/* Basic Reset */
+html{
+    box-sizing: border-box;
+}
+
+*,*::before,*::after{
+    box-sizing: inherit;
+    
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    background: #f4f4f4;
+    color: #333;
+    font-size:1rem;
+    font-family: Arial, Helvetica, sans-serif;
+    
+
+}
+/* header styles */
+header h1{
+    font-size: 1.5rem;
+}
+
+header{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #253458;
+    color: whitesmoke;
+    text-align: center;
+    height:100px;
+}
+
+/* Nav link styles */
+nav a{
+    color: whitesmoke; 
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+nav a:hover{
+    text-decoration: underline;
+    
+}
+
+nav ul{
+    display: flex;
+    justify-content: end;
+    margin-right: 50px;
+    align-items: center;
+    list-style-type: none;
+    gap: 2rem;    
+}
+
+/* Grid layout styles */
+.grid-layout{
+    margin-top: 80px;
+    display:grid;
+    gap: 1rem;
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows:repeat(6, auto) ;
+    grid-template-areas: 
+    "sidebar overview"
+    "sidebar objective"
+    "sidebar practice"
+    "sidebar instructions"
+    "sidebar deliverables"
+    "sidebar tips";
+}
+
+.sidebar{
+    grid-area: sidebar;
+    background: #e0e0e0;
+    padding: 1rem;
+   
+}
+
+.content section{
+    background: #fff;
+    padding: 1rem;
+    margin: 1rem;
+    border-radius: 5px;
+}
+
+/* Grid text area definition */
+#overview{
+    margin-top: 50px;
+    grid-area: overview;
+    
+}
+#objective{
+    grid-area: objective;
+}
+#practice{
+    grid-area: practice;
+    
+}
+#instructions{
+    grid-area: instructions;
+}
+#deliverables{
+    grid-area: deliverables;
+}
+#tips{
+    grid-area: tips;
+}
+
+/* flexbox styles */
+
+.flex-cards{
+    display: flex;
+    flex-wrap:wrap;
+    gap:1rem;
+}
+
+.flex-cards .card{
+    background-color: #253458;
+    color: whitesmoke;
+    flex: 1 1 200px;
+    padding: 1rem;
+    border-radius: 5px;
+    text-align: center;
+}
+
+/* footer styles */
+footer{
+    background-color: #253458;
+    color:whitesmoke;
+    text-align: center;
+    width: 100%;
+    bottom: 0;
+    height:50px;
+    position: fixed;
+    justify-content: center;
+}
+
+/* Mobile responsive styles */
+@media(max-width: 750px){
+    body{
+        padding-top: 80px;
+    }
+    header{
+        height: auto;
+    }
+    header h1{
+        font-size:1rem;
+    }
+    nav ul{
+        align-items: center;
+        flex-direction: column;
+    }
+     /* Stack everything */
+    .grid-layout{
+        grid-template-columns: 1fr;
+        grid-template-areas:             
+            "sidebar"
+            "overview"
+            "objective"
+            "practice"
+            "instructions"
+            "deliverables"
+            "tips";
+    }      
+}
+
